@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 8</title>
+</head>
+<body>
+<h1>Homework 8: Geoprocessing Analysis </h1>
+<h2>Caleb Tyler</h2>
+<h2>I wanted to investigate the geographic connection between areas of high poverty rates and areas of high incarceration rates. </h2>
+<!-- Your map goes here -->
+<h3>First I created a chloropleth of the poverty rates by county in the US, then I put a dot density of prison locations on top of this. The population of each prison in this point layer is what I used to determine the population incarcerated in each county.</h3>
+<a href="og.png">
+    <img src="og.png" alt="your map" width='500px'>
+    </a>
+<h3>Then, I used the select by attribute method to find all counties with poverty rates in the top 20%. I added a buffer of 0.3 degrees to include nearby areas.</h3>
+<a href="pov.png">
+    <img src="pov.png" alt="your map" width='500px'>
+    </a>
+<h3>Next, I used points-in-polygon overlap method to count the number of each prison per county(using a county geojson file). By select the option to make the weight of each point its prison population, the total population of incarcerated people in the county was found. This population of incarcerated people was divided by the total population of the county to find the rate of incarceration in the county(people incarcerated in county/county population). Select by attribute was used to take the counties with the highest 20% rates of incarceration. The buffer method was used to expand this polygon by 0.3 degrees to include nearby areas in analysis.</h3>
+<a href="incarceration.png">
+    <img src="incarceration.png" alt="your map" width='500px'>
+    </a>
+<h3>I was interested in the area that was both near a county in the top 20% incarceration rates, and near counties in the top 20% poverty rates. I believe a high amount of overlap between these two areas is a indicator poverty and incarceration rates are related. This is an overlap of the two previous maps. </h3>
+<a href="both.png">
+    <img src="both.png" alt="your map" width='500px'>
+    </a>
+<h3>Finally using the clip method, we can see the areas that are both near the highest 20% of incarceration rates in counties and the hihghest 20% of poverty rates in counties. </h3>
+<a href="clip.png">
+    <img src="clip.png" alt="your map" width='500px'>
+    </a>
+    <h2>Data used for this project</h2>
+    <a href="https://github.com/calebt321/hw6/blob/main/dataset.csv"> CSV dataset </a>
+    <p></p>
+    <a href="https://github.com/calebt321/hw6/blob/main/counties.geojson"> Link to shapefile </a>
